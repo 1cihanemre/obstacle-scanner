@@ -14,17 +14,16 @@ void setup() {
 }
 
 void loop() {
-  do{
-    myservo.write(0);
-    delay(500);
-    digitalWrite(trigPin,LOW);
-    delayMicroseconds(2);
-    digitalWrite(trigPin,HIGH);
-    delayMicroseconds(10);
-    digitalWrite(trigPin,LOW);
-    sure=pulseIn(echoPin,HIGH);
-    uzaklik=sure/2/29.154;
-  }while(false);
+  myservo.write(0);
+  delay(500);
+  digitalWrite(trigPin,LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,LOW);
+  sure=pulseIn(echoPin,HIGH);
+  uzaklik=sure/2/29.154;
+
   if(uzaklik<10){
     Serial.println("Yakinda Nesne algilandi!\nRotasyon Degistiriliyor!");
     delay(1000);
